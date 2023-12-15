@@ -12,7 +12,7 @@
                 "Single @": "Indicates a *public* *subroutine*. e.g., `@DJQ List@` refers to a *public* *subroutine* called DJQ List.  Public subroutines can be accessed by any bot on the network.",
                 "Double @": "Indicates a *private* *subroutine*. e.g., `@@Private Sub@@` refers to a *private* *subroutine* called Private Sub.  Private subs cannot be accessed by other bots on the network."
             },
-            ".": "Indicates inheritance. e.g., #sc#.operators refers to the Operators section of slowly_changing_shared_context.py. Note that references to child nodes do not have to be strictly formed. This is acceptable syntax for example: `#sc#.reserved words.theoretical knowledge` (note the spaces in the references to child nodes).",
+            ".": "Indicates inheritance. e.g., #sc#.operators refers to the Operators section of slowly_changing_shared_context.py. Note that references to child nodes do not have to be strictly formed. This is acceptable syntax for example: `#sc#.reserved words.network terms` (note the spaces in the references to child nodes).",
             "*": "Indicates a Reserved Word.  e.g., *Knowledge* refers to a specific entity defined in `#sc#.Knowledge`.  See #sc#.Reserved Words for a full list of reserved words",
             "***": "This is the *citation* operator. A string is considered a *citation* when it is wrapped in triple asterisks, for example ***This is a citation (source)***.",
             "^": "Indicates a bot. e.g., ^question^ refers to the Question bot.",
@@ -60,7 +60,6 @@
                 "Temporary State": "Temporary State is a form of memory that gets used in a *subroutine*.  Temporary State is the *private* to the bot, and the scope of temporary state is managed by the parent subroutine. Temporary State is transient context that gets loaded into a *bot's* memory during a *subroutine*.  The bot will use temporary state to inform any of the operations defined in the parent subroutine.  Here's an example: a *TP* indicates that a *bot* should load #sc#.#k#.product category definitions"
             },
 
-
             
             "Procedural Terms": {
                 "Adjudication": "The process by which ^adjudication^ selects the *top-k* *opinions*.",
@@ -102,10 +101,10 @@
         "*Synonyms*": "Other ways of referring to this node are: #sc#.k or #sc#.knowledge.",
 
         "Theory": {
-            "*Description*": "Elements of theory describe hypothetical relationships between unseen forces, such as macroeconomic circumstances.  They describe the probable interactions between events or circumstances. For example, an increase in federal interest rates likely causes an increase in average mortgage payments and therefore a reduction in discretionary spending.  Although these relationships can be observed and quantified, theoretical knowledge is less interested in the measurability of interaction between phenomena, and more interested in the qualitative observation.",
+            "*Description*": "Elements of theory describe hypothetical relationships between unseen forces, such as macroeconomic circumstances.  They describe the probable interactions between events or circumstances. For example, an increase in federal interest rates likely causes an increase in average mortgage payments and therefore a reduction in discretionary spending.  Although these relationships can be observed and quantified, *theory* is less interested in the measurability of interaction between phenomena, and more interested in the qualitative observation.",
             "*Synonyms*": "Also known as *tk*, #sc#.tk, or tk.",
             "Unattested Theory": {
-                "*Description*": "These are elements of knowledge that do not have some clear citation in any body of knowledge.  Unattested Theoretical Knowledge only lives in this document, in this node.",
+                "*Description*": "These are elements of knowledge that do not have some clear citation in any body of knowledge.  Unattested theory only lives in this document, in this node.",
                 "*Synonyms*": "Other ways of referring to this node are: #utk#, *utk*, #sc#.utk, or utk.  Also could be called UATK, #uatk# etc.",
                 "Residential Building Products": "This category encompasses a diverse range of materials, fixtures, and components used in residential construction, renovation, and finishing. Products include those for houses, apartments, and condominiums, and are vital for structural integrity, functionality, and aesthetic appeal. The 18 main categories are: Dimensional Lumber, Sheathing, Insulation, Siding, Roofing, Windows, Doors, Flooring, Cabinets, Countertops, Faucets, Plumbing Fixtures, Drywall and Wallboard, Interior Paint, Appliances, Decks and Porches, Concrete, HVAC.",
                 "Installed Volume": "A critical term in home building, 'Installed Volume' refers to the quantity of building products installed in construction projects, encompassing both repair and remodel ('R&R') and new construction. It is a key metric for assessing market demand, forecasting trends, and gauging investment opportunities. Higher installed volumes indicate strong market demand, while lower volumes suggest a decline. Factors influencing installed volume include construction trends, economic variables, interest rates, and consumer confidence.",
@@ -116,7 +115,7 @@
             "Attested Theory": {
                 "*Description*": "These are elements of knowledge that have clear citation from some other body of knowledge that is external to #sc#.",
                 "*Synonyms*": "Other ways of referring to this node are: #atk#, *atk*, #sc#.atk, or atk.",
-                "Location": "Elements of Attested Theoretical Knowledge live in a bot's private knowledge."
+                "Location": "Elements of Attested Theory live in a bot's private knowledge."
             }
         },
 
