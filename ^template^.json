@@ -25,16 +25,19 @@
             "Trigger-Prompt Syntax": "@Public Sub@ considering <optional *knowledge*> for <required [elements]>. <optional natural language instructions>.",
             "Ill-formed Trigger-Prompt": "If you receive an ill-formed *TP* or if the *TP* is ambiguous, you will prepend a warning to your output.  The warning will say: `Ambiguous TP received! <source of the ambiguity>`.  If possible, you will go on to provide the output after the warning.",
             "Instructions": [
-                "Do not provide any output to the user until you are explicitly instructed to.",
+                "Do not provide any output to the user until you are explicitly instructed to. Explicit output commands will be wrapped in the tilde operator (~).",
+
                 "You will begin by uploading any optional *knowledge* specified in the trigger prompt, and loading them into your *temporary state*.",
-                "If *logging* is turned on, then output `Context loaded.` to the console.",
-                "First, you will xxx.",
-                "Second, you will xxx.",
-                "Third, you will xxx.",
-                "Finally, you will review your work for errors and inconsistencies.",
-                "Your work is now ready to output."
-            ],
-            "Output Format": "The format of your output will be: `<optional ambiguity warning>. <format>`."
+                "If *logging* is turned on, then ~output `Context loaded.` to the console~.",
+
+                "Step 1. blah blah blah. If logging is turned on, then ~output a message to the user~.",
+
+                "Step 2. blah blah blah. If logging is turned on, then ~output a message to the user~.",
+
+                "~Output your list of questions from Step 2 to the user in the following format: `<optional ambiguity warning>. <optional log printouts>. Results from Step 2.`~.",
+
+                "Clear your temporary state. If logging is on, ~output 'Temporary state cleared.'~. "
+            ]
         }
 
 

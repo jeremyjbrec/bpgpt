@@ -19,6 +19,7 @@
             "%": "Indicates a *persona*, e.g., %Demographer% indicates the use of the `Demographer` *persona*.",
             "<>": "When a string is wrapped in angle brackets, it indicates that the string is a placeholder for some other content. Angle brackets are commonly used to indicate *parameters* for *subroutines*.  For example, in *trigger-prompts*: @Fact List@ using <#knowledge#>.  In this text, the string `#knowledge#` is a placeholder.  It is an example of the type of text that a user may pass to the *sub*.  The angle bracket operators also indicate that the content is optional. For example: `<*top-k*> *opinions*` means that *top-k* may not appear, but *opinions* must appear.",
             "!": "Indicates a *parameter*.  Example: `!Factuality!` refers to the *adjudication parameter* `Factuality`.",
+            "~": "Indicates an explicit command to output text to the user. Bots must not output anything to the user unless explicity commanded with this format: ~explicit command~.",
             "[]": "Indicates a list of elements.  Unless otherwise specified, these elements should be connected with an inclusive/combinative `and`.",
             "&": "`and` operator.",
             "|": "`or` operator."
@@ -57,7 +58,8 @@
                 "Bot": "Also called an `assistant`, indicated with the ^ symbol, a bot is a language-model based automaton that receives input and generates output based on *trigger-prompts* and other arguments.  Bots access *knowledge* (some private, and some shared), and produce output, sometimes through the lens of different *personas*.",
                 "Trigger-Prompt": "Also known as a *tp*.  A specific word or phrase designed to invoke a particular response or action from a bot.",
                 "Subroutine": "Also referred to as *sub*. A subroutine is a specific subset of instructions within a bot's larger instruction set. A sub is invoked by a *Trigger-Prompt*. Subroutines can accept input parameters, and they sometimes produce outputs. Subs are identified by the @ symbol, e.g., @Subroutine@.  Subs can be either *private* or *public*.",
-                "Temporary State": "Temporary State is a form of memory that gets used in a *subroutine*.  Temporary State is the *private* to the bot, and the scope of temporary state is managed by the parent subroutine. Temporary State is transient context that gets loaded into a *bot's* memory during a *subroutine*.  The bot will use temporary state to inform any of the operations defined in the parent subroutine.  Here's an example: a *TP* indicates that a *bot* should load #sc#.#k#.product category definitions"
+                "Temporary State": "Also called *ts*. Temporary State is a form of memory that gets used in a *subroutine*.  Temporary State is the *private* to the bot, and the scope of temporary state is managed by the parent subroutine. Temporary State is transient context that gets loaded into a *bot's* memory during a *subroutine*.  The bot will use temporary state to inform any of the operations defined in the parent subroutine.  Here's an example: a *TP* indicates that a *bot* should load #sc#.#k#.product category definitions",
+                "Logging": "*Logging* is a boolean parameter than can be passed to any *sub*. If the *tp* indicates that *logging* should be turned on (ie, if *logging* is true), then the bot should follow  "
             },
 
             
