@@ -26,40 +26,43 @@
             "|": "`or` operator."
         },
 
-        
         "Reserved Words": {
-            "Node": "A *node* is a subsection of a document, and can be accessed using the `#` and `.` operators.  For example, to access this node, a user would say `#sc#.reserved words.node`.",
-            "Description": "Also known as *desc*. Nodes may optionally contain a *description* *node*. The *description* node is not properly an element of that node.  Rather, it serves as metadata information about the purpose, function, and usage of the node.  Do not consider the *description* element for any operations when loading its parent node into context.",
-            "Synonyms": "Also known as *syn*.  Nodes may optionally contain a *synonym* *node*. The *synonym* node is not properly an element of that node.  Rather, it serves as metadata information about ways or referring to its parent node.  Do not consider the *synonym* element for any operations when loading its parent node into context.",
+            "Network Terms": {
+                "Node": "A *node* is a subsection of a document, and can be accessed using the `#` and `.` operators.  For example, to access this node, a user would say `#sc#.reserved words.node`.",
+                "Description": "Also known as *desc*. Nodes may optionally contain a *description* *node*. The *description* node is not properly an element of that node.  Rather, it serves as metadata information about the purpose, function, and usage of the node.  Do not consider the *description* element for any operations when loading its parent node into context.",
+                "Synonyms": "Also known as *syn*.  Nodes may optionally contain a *synonym* *node*. The *synonym* node is not properly an element of that node.  Rather, it serves as metadata information about ways or referring to its parent node.  Do not consider the *synonym* element for any operations when loading its parent node into context.",
+                "Network": "The system of bots that share a common state.  This file (#slowly_changing_shared_context#) is the common state.  When a *bot* is aware of this file, it is said to be on the *network*.",
+                "Private": "A scoping term which indicates that a particular element is only accessible to its parent *bot*.",
+                "Public": "A scoping term which indicates that a particular element is accessible to every *bot* on the *network*.",
+                "Pipeline": "A directed acyclic graph of *bot* operations that are performed on the network.  Data is passed from bot to bot until the final subroutine returns the pipeline output."
+            },
             
-            "Knowledge":"",
-            "Context": "",
-            "Lens":"",
+            "Information Terms": {
+                "Knowledge":"Also called *k*, or possibly #k# when it refers to a file. *Knowledge* encompasses a wide variety of meaning, but in general refers to information that is used in the performance of some task, like a subroutine. There are subcategories of knowledge, including evidential knowledge, theoretical knowledge, and context.",
+                "Context": "Also called *c*, or possibly #c# when it refers to a file. *Context* is a form of *knowledge*. It refers to the contextual state in which an operation is performed.",
+                "Parameter": "Used interchangeably with `argument`. Similar to the concept of a parameter in object oriented function calls, a parameter is an agent of behavior modification that is passed to a *sub* during  *trigger-prompting*.",
+                "Lens":"Also called *l*. Lenses are *parameters* that, similar to context, get influence the outcome of a particular operation in a subroutine.",
+                "Persona": "A *Persona*, also called a `voice`, is the tone that a subroutine uses to generate its output. For example, a particular *subroutine* could be performed using a %Demographer% persona, which means that every operation in the *sub* is performed in the way a demographer would perform that operation.",
+                "Citation":"A citation is a verbatim reference to a small subsection of *knowledge*. Citations are copied word for word, token for token, from their source.  The original location of the citation is placed at the end of the citation. Citations take on this format: `***This is a direct quote from a knowledge source (this is the location of the direct quote in its original context).***"
+            },
 
-            "Bot": "Also called an `assistant`, indidated with the ^ symbol, a bot is a language-model based automaton that receives input and generates output based on *trigger-prompts* and other arguments.  Bots access *knowledge* (some private, and some shared), and produce output, sometimes through the lens of different *personas*.",
-            "Network": "The system of bots that share a common state.  This file (#slowly_changing_shared_context#) is the common state.  When a *bot* is aware of this file, it is said to be on the *network*.",
-            "Private": "A scoping term which indicates that a particular element is only accessible to its parent *bot*.",
-            "Public": "A scoping term which indicates that a particular element is accessible to every *bot* on the *network*.",
-            "Trigger-Prompt": "Also known as a *tp*.  A specific word or phrase designed to invoke a particular response or action from a bot.",
-            "Subroutine": "Also referred to as *sub*. A subroutine is a specific subset of instructions within a bot's larger instruction set. A sub is invoked by a *Trigger-Prompt*. Subroutines can accept input parameters, and they sometimes produce outputs. Subs are identified by the @ symbol, e.g., @Subroutine@.  Subs can be either *private* or *public*.",
-            "Parameter": "Used interchangeably with `argument`. Similar to the concept of a parameter in object oriented function calls, a parameter is an agent of behavior modification that is passed to a *sub* during  *trigger-prompting*.",
-            "Temporary State": "Temporary State is a form of memory that gets used in a *subroutine*.  Temporary State is the *private* to the bot, and the scope of temporary state is managed by the parent subroutine. Temporary State is transient context that gets loaded into a *bot's* memory during a *subroutine*.  The bot will use temporary state to inform any of the operations defined in the parent subroutine.  Here's an example: a *TP* indicates that a *bot* should load #sc#.#k#.product category definitions",
-            "Pipeline": "A directed acyclic graph of *bot* operations that are performed on the network.  Data is passed from bot to bot until the final subroutine returns the pipeline output.",
+            "Bot Terms": {
+                "Bot": "Also called an `assistant`, indidated with the ^ symbol, a bot is a language-model based automaton that receives input and generates output based on *trigger-prompts* and other arguments.  Bots access *knowledge* (some private, and some shared), and produce output, sometimes through the lens of different *personas*.",
+                "Trigger-Prompt": "Also known as a *tp*.  A specific word or phrase designed to invoke a particular response or action from a bot.",
+                "Subroutine": "Also referred to as *sub*. A subroutine is a specific subset of instructions within a bot's larger instruction set. A sub is invoked by a *Trigger-Prompt*. Subroutines can accept input parameters, and they sometimes produce outputs. Subs are identified by the @ symbol, e.g., @Subroutine@.  Subs can be either *private* or *public*.",
+                "Temporary State": "Temporary State is a form of memory that gets used in a *subroutine*.  Temporary State is the *private* to the bot, and the scope of temporary state is managed by the parent subroutine. Temporary State is transient context that gets loaded into a *bot's* memory during a *subroutine*.  The bot will use temporary state to inform any of the operations defined in the parent subroutine.  Here's an example: a *TP* indicates that a *bot* should load #sc#.#k#.product category definitions",
+            },
 
-            "Persona": "A *Persona*, also called a `voice`, is the lens through which a bot generates its output. For example, a particular *subroutine* could be performed using a %Demographer% persona, which means that every operation in the *sub* is performed in the way a demographer would perform that operation.",
-            "Citation":"A citation is a verbatim reference to a small subsection of *knowledge*. Citations are copied word for word, token for token, from their source.  The original location of the citation is placed at the end of the citation. Citations take on this format: `***This is a direct quote from a knowledge source (this is the location of the direct quote in its original context).***",
-            
-            
-            
-            
-            "Insight":"",
-            "De-Jargoned Question": "Also known as a *DJQ* or a *Q*. This refers to a question formulated in straightforward language, easily understandable without specialized knowledge in a particular field.",
-            "Adjudication": "The process by which ^adjudication^ selects the *top-k* *opinions*.",
-            "Top-K": "During the *adjucation* process, the user can select a value `k`.  ^adjudication^ will select the `k` *opinions* that maximize the *adjudication parameters* the most.",
-            "Adjudication Parameter": "Also known as an *AP*. This is the criterion by which an opinion is selected/adjudicated.  Multiple *parameters* can be chosen for the adjudication of a single *opinion*",
-            "Opinion": "An adjudicated *fact*.  A *fact* is selected (adjudicated) by ^adjudication^ based on the extent to which it maximizes the *adjudication parameters* chosen in the prompt.",
-            "Summary":"",
-            "Thesis":""
+            "Element Terms": {           
+                "Insight":"An *insight* is a",
+                "De-Jargoned Question": "Also known as a *DJQ* or a *Q*. This refers to a question formulated in straightforward language, easily understandable without specialized knowledge in a particular field.",
+                "Adjudication": "The process by which ^adjudication^ selects the *top-k* *opinions*.",
+                "Top-K": "During the *adjucation* process, the user can select a value `k`.  ^adjudication^ will select the `k` *opinions* that maximize the *adjudication parameters* the most.",
+                "Adjudication Parameter": "Also known as an *AP*. This is the criterion by which an opinion is selected/adjudicated.  Multiple *parameters* can be chosen for the adjudication of a single *opinion*",
+                "Opinion": "An adjudicated *fact*.  A *fact* is selected (adjudicated) by ^adjudication^ based on the extent to which it maximizes the *adjudication parameters* chosen in the prompt.",
+                "Summary":"",
+                "Thesis":""
+            }
         },
         
         "Bots":{
@@ -73,11 +76,14 @@
         },
 
         "Pipeline Syntax":{
-            "*Description*": "This node describes the syntax of a *pipeline*."
+            "*Description*": "This node describes the syntax of a *pipeline*.",
+            "Syntax": ""
         },
 
 
-        "General Syntax Notes": {}
+        "General Syntax Notes": {
+
+        }
     },
 
 
