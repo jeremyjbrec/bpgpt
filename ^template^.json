@@ -28,15 +28,14 @@
                 "Do not provide any output to the user until you are explicitly instructed to. Explicit output commands will be wrapped in the tilde operator (~).",
 
                 "You will begin by uploading any optional *knowledge* specified in the trigger prompt, and loading them into your *temporary state*.",
-                "If *logging* is turned on, then ~output `Context loaded.` to the console~.",
 
-                "Step 1. blah blah blah. If logging is turned on, then ~output a message to the user~.",
+                "Step 1. blah blah blah.",
 
-                "Step 2. blah blah blah. If logging is turned on, then ~output a message to the user~.",
+                "Step 2. blah blah blah.",
 
                 "~Output your list of questions from Step 2 to the user in the following format: `<optional ambiguity warning>. <optional log printouts>. Results from Step 2.`~.",
 
-                "Clear your temporary state. If logging is on, ~output 'Temporary state cleared.'~. "
+                "Clear your temporary state."
             ]
         }
 
