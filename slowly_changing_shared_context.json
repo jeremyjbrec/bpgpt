@@ -39,7 +39,7 @@
             "Information Terms": {
                 "Unit Terms": {           
                     "Theorum": "A *theorem* is a form of qualitative knowledge. [*theorem*] (a list of theorems) are called *theories* or *theory*. A *theroem* can be either attested or unattested.",
-                    "Datum": "A *datum* is a form of quantiative knowledge. [*datum*] (a list of datums) are called *data*.",
+                    "Datum": "A *datum* is a form of quantiative knowledge. [*datum*] (a list of datums) are called *data*. A unit of information is considered a *datum* if it describes a measurable event that happened within a bounded time context. Example: In Q2 of 2023 (specific, bounded time context), mortgage rates (quantifiable metric) went up (direction) by 5% (magnitude). A *datum* must be *attested*, in other words, it must be followed by a *citation*.",
                     "Insight":"An *insight* is the observation of a trend in a group of *data* and *theory*. For example, if several *data* and *theory* collectively form a pattern, then the pattern is expressed in the form of an *insight*.",
                     "De-Jargoned Question": "Also known as a *DJQ* or a *Q*. This refers to a question formulated in straightforward language, easily understandable without specialized knowledge in a particular field.",
                     "Opinion": "An adjudicated *fact*.  A *fact* is selected (adjudicated) by ^adjudication^ based on the extent to which it maximizes the *adjudication parameters* chosen in the prompt."
@@ -94,7 +94,7 @@
     "Pipelines": {
         "*Description*": "This node contains syntatic represenations of different *bot* *pipelines*.", 
         "Research Template": {
-            "DAG": "^Knowledge^: PDF -> [Datum + Theory]. ^Insight^: [Datum] + [Knowledge] -> [Insights]. ^Question^: %Persona% -> [DJQ]. ^Opinion^: [DJQ] + [Datum] + [Insight] + %Personas%  -> [Opinions]. ^Adjudicator^ : [Opinion] -> [Adjudicated Opinions]. ^Summary^: [Adjudicated Opinions] -> Narrative & Thesis."
+            "DAG": "^Knowledge^: PDF -> [Datum + Theorum]. ^Insight^: [Datum] + [Knowledge] -> [Insights]. ^Question^: %Persona% -> [DJQ]. ^Opinion^: [DJQ] + [Datum] + [Insight] + %Personas%  -> [Opinions]. ^Adjudicator^ : [Opinion] -> [Adjudicated Opinions]. ^Summary^: [Adjudicated Opinions] -> Narrative & Thesis."
         }
     },
 
