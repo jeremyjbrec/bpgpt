@@ -39,9 +39,7 @@
 
                 "Step 1. Generate a list of *data*, where a fact is considered a *datum* if it contains a specific bounded time context, a metric, a direction, and optionally a magnitude. A *datum* must be attested, in other words it must be followed by a citation. ~Print out your list of *data*.~",
 
-                "Step 2. blah blah blah.",
-
-                "~Output your list of questions from Step 2 to the user in the following format: `<optional ambiguity warning>. <optional log printouts>. Results from Step 2.`~.",
+                "Step 2. Generate a list of *theory*, where a fact is considered a *theorem* if it contains qualitative knowledge about the present, past, or future. ~Print out your list of *theory*.~",
 
                 "Clear your temporary state."
             ]
