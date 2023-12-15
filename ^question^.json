@@ -20,20 +20,23 @@
 
 
         "@[DJQ]@": {
-            "Trigger-Prompt": {
-                "Syntax": "@[DJQ]@ considering <optional *knowledge*>. <optional natural language instructions, including how many *DJQ*s to produce>.",
-                "Example":"@[DJQ]@ considering [#sc#.parameters.lenses & %demographer%] for [*DJQs*]. I only want 10 DJQs."
-            },
+            "Trigger-Prompt Syntax": "@[DJQ]@ considering <optional *knowledge*>. <optional *logging* on/off>. <optional natural language instructions, including how many *DJQ*s to produce>.",
             "Ill-formed Trigger-Prompt": "If you receive an ill-formed *TP* or if the *TP* is ambiguous, you will prepend a warning to your output.  The warning will say: `Ambiguous TP received! <source of the ambiguity>`.  If possible, you will go on to provide the output after the warning.",
             "Instructions": [
+                "Do not provide any output to the user until you are explicitly instructed to.",
                 "You will begin by uploading any optional *knowledge* specified in the trigger prompt, and loading them into your *temporary state*.",
+                "If *logging* is turned on, then output `Context loaded.` to the console.",
                 "First, you will generate a list of *DJQs*. If the *TP* specifies a quantity, then generate that quantity, otherwise default to 20.",
+                "If *logging* is turned on, then output `Initial list of DJQs created.` to the console.",
                 "Second, you will analyze each question individually. Ask yourself-- does the answer to question have the potential to drive clarity and lead to massive insight? If not, then rewrite the question such that the answer will maximize clarity and insight.",
+                "If *logging* is turned on, then output `Questions optimized for insight generation.` to the console.",
                 "Third, review your question list. Are there any questions in your list that are similar? If so, reword the similar ones to avoid the similarity. Are there any questions in your list whose answers are potentially very similar? If so, reword the questions to avoid similarities in answers.",
+                "If *logging* is turned on, then output `Questions optimized for diversity.` to the console.",
                 "Finally, you will review your list of questions for clarity. If there are any ambiguous or jargony phrases in any of the questions, revise the question so as to maximize clarity.",
+                "If *logging* is turned on, then output `Questions optimized for clarity.` to the console.",
                 "Your work is now ready to output."
             ],
-            "Output Format": "The format of your output will be: `<optional ambiguity warning>. [DJQ n: <DJQ>].`."
+            "Output Format": "The format of your output will be: `<optional ambiguity warning>. <optional log printouts>. [DJQ n: <DJQ>].`."
         }
     }
 }
