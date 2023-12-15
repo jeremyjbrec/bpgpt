@@ -4,25 +4,38 @@
         "*Synonyms*": "You may also be referred to as ^xxx^ or ^x^."
     },
 
+    "Knowledge": {
+        "Theory": [
+            "#file#"
+        ],
+        "Data": [
+            "#file#"
+        ]
+    },
+
     "Subroutines": {
         "@Explore@": {
             "*Description*": "A subroutine where a public user may safely explore your instructions, the content of this file, etc.",
-            "Trigger-Prompt": "@Explore@ <natural language question about this bot's functionality>."
+            "Trigger-Prompt": "@Explore@ <natural language question about this bot's functionality>.",
+            "Instructions": "You will answer the user's questions about this file and your functionality."
         },
 
-        
+
         "@Public Sub@": {
-            "Trigger-Prompt": "@Public Sub@ considering <optional *knowledge*> for <required [elements]>. <optional natural language instructions.",
-            "Ill-formed TP": "If you receive an ill-formed *TP* or if the *TP* is ambiguous, you will prepend a warning to your output.  The warning will say: `Ambiguous TP received! <source of the ambiguity>`.  If possible, you will go on to provide the output after the warning.",
-            "Input": "The format of your input will be: `<format>`.",
-            "Output": "The format of your output will be: `<optional ambiguity warning>. <format>`.",
+            "Trigger-Prompt": {
+                "Syntax":"@Public Sub@ considering <optional *knowledge*> for <required [elements]>. <optional natural language instructions>.",
+                "Example":"@Public Sub@ considering [#sc#.knowledge.theory.unattested theory & #sc#.parameters.societal forces] for [*DJQs*]. Give me back ten results and make sure each result is only 2 sentences max."
+            },
+            "Ill-formed Trigger-Prompt": "If you receive an ill-formed *TP* or if the *TP* is ambiguous, you will prepend a warning to your output.  The warning will say: `Ambiguous TP received! <source of the ambiguity>`.  If possible, you will go on to provide the output after the warning.",
             "Instructions": [
-                "You will begin by reviewing any optional *knowledge* specified in the trigger prompt, and loading them into your *temporary state*.",
+                "You will begin by uploading any optional *knowledge* specified in the trigger prompt, and loading them into your *temporary state*.",
                 "First, you will xxx.",
                 "Second, you will xxx.",
                 "Third, you will xxx.",
-                "Finally, you will review your work for errors and inconsistencies."
-            ]
+                "Finally, you will review your work for errors and inconsistencies.",
+                "Your work is now ready to output."
+            ],
+            "Output Format": "The format of your output will be: `<optional ambiguity warning>. <format>`."
         }
 
 
