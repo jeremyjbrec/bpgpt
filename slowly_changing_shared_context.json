@@ -2,21 +2,26 @@
     "Instructions": {
         "Overview": "This document compiles a collection of definitions and abstractions that change infrequently. These elements are universally applicable across all bots in the network.",
         "Purpose": "Utilize this document as a central reference point. It serves to standardize and clarify terms and concepts used throughout the network of bots.",
-        "Synonyms": "This file can be called `slowly_changing_shared_context.py`, #slowly_changing_shared_context#, #slowly changing#, #sc#, etc."
+        "Synonyms": "This file can be called `slowly_changing_shared_context.py`, #slowly_changing_shared_context#, #slowly changing#, or #sc#."
     },
 
-    "Operators": {
-        "#": "Indicates a file. e.g., `#sc#` refers to this document",
-        "@": "Indicates a subroutine. e.g., `@DJQ List@` refers to a subroutine called DJQ List",
-        ".": "Indicates inheritance. e.g., #sc#.operators refers to the Operators section of slowly_changing_shared_context.py",
-        "*": "Indicates a Reserved Word.  e.g., *Knowledge* refers to a specific entity defined in #sc#.reserved words.  See #sc#.reserved words for a full list of reserved words",
-        "^": "Indicates a bot. e.g., ^question^ refers to the Question bot.",
-        "%": "Indicates a *persona*, e.g., %Demographer% indicates the use of the `Demographer` *persona*.",
-        "<>": "When a string is wrapped in angle brackets, it indicates that the string is a placeholder for some other content. For example, in *trigger-prompts*: @Fact List@ using <#knowledge#>.  In this text, the string `#knowledge#` is a placeholder.  It is an example of the type of text that a user may pass to the *sub*.  The angle bracket operators also indicate that the content is optional. For example: `<*top-k*> *opinions*` means that *top-k* may not appear, but *opinions* must appear.",
-        "!": "Indicates an *adjudication parameter*.  Example: `!Factuality!` refers to the *adjudication parameter* `Factuality`.",
-        "[]": "Indicates a list of elements.  Unless otherwise specified, these elements should be connected with an inclusive/combinative `and`.",
-        "&": "`and` operator.",
-        "|": "`or` operator."
+    "Network Protocol": {
+        "Operators": {
+            "#": "Indicates a file. e.g., `#sc#` refers to this document",
+            "@": {
+                "Single @":"Indicates a *public* *subroutine*. e.g., `@DJQ List@` refers to a *public* *subroutine* called DJQ List.  Public subroutines can be accessed by any bot on the network.",
+                "Double @":"Indicates a *private* *subroutine*. e.g., `@@Private Sub@@` refers to a *private* *subroutine* called Private Sub.  Private subs cannot be accessed by other bots on the network."
+            },
+            ".": "Indicates inheritance. e.g., #sc#.operators refers to the Operators section of slowly_changing_shared_context.py. Note that child nodes do not have to be wrapped ",
+            "*": "Indicates a Reserved Word.  e.g., *Knowledge* refers to a specific entity defined in #sc#.reserved words.  See #sc#.reserved words for a full list of reserved words",
+            "^": "Indicates a bot. e.g., ^question^ refers to the Question bot.",
+            "%": "Indicates a *persona*, e.g., %Demographer% indicates the use of the `Demographer` *persona*.",
+            "<>": "When a string is wrapped in angle brackets, it indicates that the string is a placeholder for some other content. For example, in *trigger-prompts*: @Fact List@ using <#knowledge#>.  In this text, the string `#knowledge#` is a placeholder.  It is an example of the type of text that a user may pass to the *sub*.  The angle bracket operators also indicate that the content is optional. For example: `<*top-k*> *opinions*` means that *top-k* may not appear, but *opinions* must appear.",
+            "!": "Indicates an *adjudication parameter*.  Example: `!Factuality!` refers to the *adjudication parameter* `Factuality`.",
+            "[]": "Indicates a list of elements.  Unless otherwise specified, these elements should be connected with an inclusive/combinative `and`.",
+            "&": "`and` operator.",
+            "|": "`or` operator."
+        }
     },
 
     "Reserved Words": {
