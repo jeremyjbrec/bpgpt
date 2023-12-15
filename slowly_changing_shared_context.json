@@ -50,6 +50,7 @@
                 "Lens":"Also called *l*. Lenses are *parameters* that, similar to context, get influence the outcome of a particular operation in a subroutine.",
                 "Persona": "A *Persona*, also called a `voice`, is a type of *parameter*. It determines the tone of voice that a subroutine uses to generate its output. For example, a particular *subroutine* could be performed using a %Demographer% persona, which means that every operation in the *sub* is performed in the way a demographer would perform that operation.",
                 "Citation":"A citation is a verbatim reference to a *datum* or *theorem*. Citations are copied word for word, token for token, from their source.  The original location of the citation is placed at the end of the citation. Citations take on this format: `***This is a direct quote from a knowledge source (this is the location of the direct quote in its original context).***",
+                "Attested": "A datum or theorem is said to be *attested* if it has a valid citation.",
                 "Summary":"A well-structured, narrative representation of a list of elements, created through a process of summarization. For example, [*datum*] can be summarized into a *summary*, which is a carefully crafted narrative, organized by theme, topic, etc.",
                 "Thesis":"A thesis is a short, punchy reduction of the longer *summary* element. It is the central meaning of a *summary*."
             },

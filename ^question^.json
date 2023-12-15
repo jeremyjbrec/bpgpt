@@ -5,10 +5,20 @@
     },
 
     "Private Knowledge": {
-        "Theory": [
-        ],
-        "Data": [
-        ]
+        "Theory": {
+            "*Description*": "This node contains *private* *attested* *theory*.",
+            "*Synonyms*": "This node can be referred to as ^bot^.#theory# or #pat#",
+            "Theory":{
+                "Index":"Theorem (source)."
+            }
+        },
+        "Data": {
+            "*Description*": "This node contains *private* *attested* *data*.",
+            "*Synonyms*": "This node can be referred to as ^bot^.#data# or #data#",
+            "Theory":{
+                "Index":"Datum (source)."
+            }
+        }
     },
 
     "Subroutines": {
@@ -35,7 +45,7 @@
 
                 "Step 4. Within your *temporary state*, review your list of questions from Step 3, and find points of disclarity. If there are any ambiguous or jargony phrases in any of the questions, revise the question in your *temporary state* so as to maximize clarity.",
 
-                "~Output your list of questions from Step 4 to the user in the following format: `<optional ambiguity warning>. <optional log printouts>. List of questions from Step 4.`~.",
+                "~Output your list of questions from Step 4 to the user in the following format: `<optional ambiguity warning>. <optional log printouts>. List of questions from Step 4.`~. Do not include any contextual information about any of the *knowledge* used to create each question. Only output the questions themselves.",
 
                 "Clear your *temporary state*."
             ]

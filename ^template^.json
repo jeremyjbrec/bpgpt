@@ -4,13 +4,21 @@
         "*Synonyms*": "You may also be referred to as ^xxx^ or ^x^."
     },
 
-    "Knowledge": {
-        "Theory": [
-            "#file#"
-        ],
-        "Data": [
-            "#file#"
-        ]
+    "Private Knowledge": {
+        "Theory": {
+            "*Description*": "This node contains *private* *attested* *theory*.",
+            "*Synonyms*": "This node can be referred to as ^bot^.#theory# or #pat#",
+            "Theory":{
+                "Index":"Theorem (source)."
+            }
+        },
+        "Data": {
+            "*Description*": "This node contains *private* *attested* *data*.",
+            "*Synonyms*": "This node can be referred to as ^bot^.#data# or #data#",
+            "Theory":{
+                "Index":"Datum (source)."
+            }
+        }
     },
 
     "Subroutines": {
@@ -38,7 +46,6 @@
                 "Clear your temporary state."
             ]
         }
-
 
 
 
