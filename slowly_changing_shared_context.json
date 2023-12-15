@@ -26,10 +26,15 @@
             "|": "`or` operator."
         },
 
+        
         "Reserved Words": {
             "Node": "A *node* is a subsection of a document, and can be accessed using the `#` and `.` operators.  For example, to access this node, a user would say `#sc#.reserved words.node`.",
             "Description": "Also known as *desc*. Nodes may optionally contain a *description* *node*. The *description* node is not properly an element of that node.  Rather, it serves as metadata information about the purpose, function, and usage of the node.  Do not consider the *description* element for any operations when loading its parent node into context.",
             "Synonyms": "Also known as *syn*.  Nodes may optionally contain a *synonym* *node*. The *synonym* node is not properly an element of that node.  Rather, it serves as metadata information about ways or referring to its parent node.  Do not consider the *synonym* element for any operations when loading its parent node into context.",
+            
+            "Knowledge":"",
+            "Context": "",
+            "Lens":"",
 
             "Bot": "Also called an `assistant`, indidated with the ^ symbol, a bot is a language-model based automaton that receives input and generates output based on *trigger-prompts* and other arguments.  Bots access *knowledge* (some private, and some shared), and produce output, sometimes through the lens of different *personas*.",
             "Network": "The system of bots that share a common state.  This file (#slowly_changing_shared_context#) is the common state.  When a *bot* is aware of this file, it is said to be on the *network*.",
@@ -39,17 +44,38 @@
             "Subroutine": "Also referred to as *sub*. A subroutine is a specific subset of instructions within a bot's larger instruction set. A sub is invoked by a *Trigger-Prompt*. Subroutines can accept input parameters, and they sometimes produce outputs. Subs are identified by the @ symbol, e.g., @Subroutine@.  Subs can be either *private* or *public*.",
             "Parameter": "Used interchangeably with `argument`. Similar to the concept of a parameter in object oriented function calls, a parameter is an agent of behavior modification that is passed to a *sub* during  *trigger-prompting*.",
             "Temporary State": "Temporary State is a form of memory that gets used in a *subroutine*.  Temporary State is the *private* to the bot, and the scope of temporary state is managed by the parent subroutine. Temporary State is transient context that gets loaded into a *bot's* memory during a *subroutine*.  The bot will use temporary state to inform any of the operations defined in the parent subroutine.  Here's an example: a *TP* indicates that a *bot* should load #sc#.#k#.product category definitions",
+            "Pipeline": "A directed acyclic graph of *bot* operations that are performed on the network.  Data is passed from bot to bot until the final subroutine returns the pipeline output.",
 
             "Persona": "A *Persona*, also called a `voice`, is the lens through which a bot generates its output. For example, a particular *subroutine* could be performed using a %Demographer% persona, which means that every operation in the *sub* is performed in the way a demographer would perform that operation.",
             "Citation":"A citation is a verbatim reference to a small subsection of *knowledge*. Citations are copied word for word, token for token, from their source.  The original location of the citation is placed at the end of the citation. Citations take on this format: `***This is a direct quote from a knowledge source (this is the location of the direct quote in its original context).***",
+            
+            
+            
+            
+            "Insight":"",
             "De-Jargoned Question": "Also known as a *DJQ* or a *Q*. This refers to a question formulated in straightforward language, easily understandable without specialized knowledge in a particular field.",
-            "Fact": "An information piece derived from *Literature* or *Knowledge* that can assist in responding to a *De-Jargoned Question*. A *fact* contains both the *DJQ* and the information required to answer the *DJQ*, in other words a *fact* is a question/answer pair.",
-            "Adjudication": "The process by which ^adjudicator^ selects the *top-k* *opinions*.",
-            "Top-K": "During the *adjucation* process, the user can select a value `k`.  ^Adjudicator^ will select the `k` *opinions* that maximize the *adjudication parameters* the most.",
-            "Adjudication Parameter": "Also known as a *parameter* or an *AP*. This is the criterion by which an opinion is selected/adjudicated.  Multiple *parameters* can be chosen for the adjudication of a single *opinion*",
-            "Opinion": "An adjudicated *fact*.  A *fact* is selected (adjudicated) by ^adjudicator^ based on the extent to which it maximizes the *adjudication parameters* chosen in the prompt."
-
+            "Adjudication": "The process by which ^adjudication^ selects the *top-k* *opinions*.",
+            "Top-K": "During the *adjucation* process, the user can select a value `k`.  ^adjudication^ will select the `k` *opinions* that maximize the *adjudication parameters* the most.",
+            "Adjudication Parameter": "Also known as an *AP*. This is the criterion by which an opinion is selected/adjudicated.  Multiple *parameters* can be chosen for the adjudication of a single *opinion*",
+            "Opinion": "An adjudicated *fact*.  A *fact* is selected (adjudicated) by ^adjudication^ based on the extent to which it maximizes the *adjudication parameters* chosen in the prompt.",
+            "Summary":"",
+            "Thesis":""
         },
+        
+        "Bots":{
+            "*Description*": "A list of all *bots* on the *network*.",
+            "^Knowledge^":"Creates *knowledge* from unstructured data.",
+            "^Insight^":"Creates *insights* from *knowledge*.",
+            "^Question^":"Creates *de-jargoned questions* from *context* or *knowledge*.",
+            "^Opinion^":"Creates *opinions* from *de-jargoned questions* and *context* or *knowledge*.",
+            "^Adjudicator^":"Selects the *top-k* *opinions* from [*opinions*].",
+            "^Summary^":"Creates a *summary* and <a *thesis*>."
+        },
+
+        "Pipeline Syntax":{
+            "*Description*": "This node describes the syntax of a *pipeline*."
+        },
+
 
         "General Syntax Notes": {}
     },
@@ -57,7 +83,9 @@
 
     "Pipelines": {
         "*Description*": "This node contains syntatic represenations of different *bot* *pipelines*.", 
-        "Research Template": "^K^ : PDF -> [K]. ^I^: [K] -> [I]. ^Q^: %Persona% -> [DJQ]. ^O^: [DJQ] + [K] + [I] + %Personas%  -> [O]. ^J^ : [O] -> [AO]. ^S^: [AO] -> Narrative & Thesis."
+        "Research Template": {
+            "DAG": "^Knowledge^: PDF -> [Knowledge]. ^Insight^: [Knowledge] -> [Insights]. ^Question^: %Persona% -> [DJQ]. ^Opinion^: [DJQ] + [Knowledge] + [Insight] + %Personas%  -> [Opinions]. ^Adjudicator^ : [Opinion] -> [Adjudicated Opinions]. ^Summary^: [Adjudicated Opinions] -> Narrative & Thesis."
+        }
     },
 
 
@@ -120,7 +148,6 @@
 
 
 
-
     "Parameters": {
         "Societal Forces": {
             "*Description*": "Societal forces are a context lens that you can load when you begin working through a problem. When a user prompts a bot to consider societal forces while performing some operation, the bot will load these elements into context and consider the operation from the lens of these forces.",
@@ -139,10 +166,11 @@
             "Fluency": "This *AP* involves the following. Coherence and Consistency: The output should be logically structured and consistent. It should follow a clear line of thought or argument without contradicting itself or deviating from the topic. Lexical Choice: The choice of words should be appropriate for the context. This includes using vocabulary that is neither too simplistic nor unnecessarily complex, and which fits the subject matter and intended audience.Naturalness: The text should read as if it was written by a human. This means avoiding awkward phrasings, repetitive structures, or stilted language that could disrupt the flow of reading.",
             "Confidence": "This *AP* involves the following. Clarity and Conciseness: Confident writing is direct and to the point. It avoids unnecessary jargon or complex language that might confuse the reader. The message is clear and easy to understand.  Strong, Active Voice: Using an active voice, where the subject of a sentence performs the action, often makes statements more direct and impactful. Positive Language: Confident communication often uses positive language. It focuses on what can be done rather than what cannot. For example, `Let's explore solutions` instead of `This is a problem.` Assertiveness: This involves stating opinions or facts clearly and firmly, without being aggressive. For example, `I believe that this approach will yield the best results` shows conviction without dismissing others' perspectives.Purposeful Word Choice: Choosing words deliberately to convey the right level of emphasis and emotion. For instance, using strong verbs and specific nouns can make the writing more compelling. Fact-Based Arguments: Backing up claims with data, evidence, or logical reasoning. This builds credibility and shows that the writer has done their research."
         },
-        "":{
-            "Current Conditions": "The 'Current Conditions' section in a market analysis provides an up-to-date overview of the existing state of the market for a particular product. This includes an assessment of current supply and demand dynamics and any immediate factors that impact the market or installed volume. The objective is to present a snapshot of where the market stands at the moment of the report, offering insight into its present health and immediate challenges or opportunities.",
-            "Demand Drivers": "The 'Demand Drivers' section delves into the various factors that influence the demand for a product or service. This can encompass a wide range of elements, such as technological advancements, consumer preferences and behaviors, economic indicators (like income levels and interest rates), demographic trends, and regulatory changes. Understanding these drivers is crucial for identifying what stimulates consumer interest and purchasing decisions. This section helps in recognizing the underlying causes behind market trends, providing a foundation for more accurate predictions and strategic planning.",
-            "Demand Outlook": "The 'Demand Outlook' section provides a forward-looking analysis, projecting future demand for a product or sector. This involves forecasting where the market is headed based on current trends, potential market developments, anticipated changes in demand drivers, and macroeconomic forecasts. This outlook may include short-term (e.g., next quarter or year) and long-term (e.g., next four years) projections. The aim is to predict future market conditions, helping businesses and investors make informed decisions about production, marketing, investment, and development strategies. This section is inherently speculative and often relies on a combination of data analysis, market expertise, and economic modeling.",
+        "Lenses":{
+            "*Description*":"These elements are contextual *lenses* than can be applied to any exercise or analysis.",
+            "Current Conditions": "The 'Current Conditions' section in a market analysis, for example, provides an up-to-date overview of the existing state of the market for a particular product. This includes an assessment of current supply and demand dynamics and any immediate factors that impact the market or installed volume. The objective is to present a snapshot of where the market stands at the moment of the report, offering insight into its present health and immediate challenges or opportunities.",
+            "Demand Drivers": "This lens delves into the various factors that influence the demand for a product or service. This can encompass a wide range of elements, such as technological advancements, consumer preferences and behaviors, economic indicators (like income levels and interest rates), demographic trends, and regulatory changes. Understanding these drivers is crucial for identifying what stimulates consumer interest and purchasing decisions. This section helps in recognizing the underlying causes behind market trends, providing a foundation for more accurate predictions and strategic planning.",
+            "Demand Outlook": "This lense provides a forward-looking analysis, projecting future demand for a product or sector. This involves forecasting where the market is headed based on current trends, potential market developments, anticipated changes in demand drivers, and macroeconomic forecasts. This outlook may include short-term (e.g., next quarter or year) and long-term (e.g., next four years) projections. The aim is to predict future market conditions, helping businesses and investors make informed decisions about production, marketing, investment, and development strategies. This section is inherently speculative and often relies on a combination of data analysis, market expertise, and economic modeling."
         }
     }
 }
