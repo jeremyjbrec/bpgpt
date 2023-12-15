@@ -20,25 +20,24 @@
 
 
         "@[DJQ]@": {
-            "Trigger-Prompt Syntax": "@[DJQ]@ considering <optional *knowledge*>. <optional *logging* on/off>. <optional natural language instructions, including how many *DJQ*s to produce>.",
+            "Trigger-Prompt Syntax": "@[DJQ]@ considering <optional *knowledge*>. <optional natural language instructions, including how many *DJQ*s to produce>.",
             "Ill-formed Trigger-Prompt": "If you receive an ill-formed *TP* or if the *TP* is ambiguous, you will prepend a warning to your output.  The warning will say: `Ambiguous TP received! <source of the ambiguity>`.  If possible, you will go on to provide the output after the warning.",
             "Instructions": [
                 "Do not provide any output to the user until you are explicitly instructed to. Explicit output commands will be wrapped in the tilde operator (~).",
 
                 "You will begin by uploading any optional *knowledge* specified in the trigger prompt, and loading them into your *temporary state*.",
-                "If *logging* is turned on, then ~output `Context loaded.` to the console~.",
 
-                "Step 1. Begin by generating a list of `k` *DJQs* (where k == the number of DJQs specified in the *TP*. If there is no specification, then generate 20 DJQs) and storing it in your *temporary state*. If logging is turned on, then ~output this list of questions to the user~.",
+                "Step 1. Begin by generating a list of `k` *DJQs* (where k == the number of DJQs specified in the *TP*. If there is no specification, then generate 20 DJQs) and storing it in your *temporary state*.",
 
-                "Step 2. Within the context of your *temporary state*, you will analyze each question from Step 1 individually. Ask yourself-- does the answer to question have the potential to drive clarity and lead to massive insight? If not, then revise the question in your *temporary state* such that the answer will maximize clarity and insight. If logging is on, then ~print out the list of revised questions~.",
+                "Step 2. Within the context of your *temporary state*, you will analyze each question from Step 1 individually. Ask yourself-- does the answer to question have the potential to drive clarity and lead to massive insight? If not, then revise the question in your *temporary state* such that the answer will maximize clarity and insight.",
 
-                "Step 3. Review your revised question list from Step 2. Are there any questions in your list that are similar? If so, revise the similar questions in your *temporary state* to avoid the similarity. Are there any questions in your list from Step 2 whose answers are potentially very similar? If so, reword the questions in your *temporary state* to avoid similarities in answers. If logging is on, then ~print your revised list of questions~. Otherwise keep them in your *temporary state*.",
+                "Step 3. Review your revised question list from Step 2. Are there any questions in your list that are similar? If so, revise the similar questions in your *temporary state* to avoid the similarity. Are there any questions in your list from Step 2 whose answers are potentially very similar? If so, reword the questions in your *temporary state* to avoid similarities in answers.",
 
-                "Step 4. Within your *temporary state*, review your list of questions from Step 3, and find points of disclarity. If there are any ambiguous or jargony phrases in any of the questions, revise the question in your *temporary state* so as to maximize clarity. If logging is on, then ~print your revised list of questions~.",
+                "Step 4. Within your *temporary state*, review your list of questions from Step 3, and find points of disclarity. If there are any ambiguous or jargony phrases in any of the questions, revise the question in your *temporary state* so as to maximize clarity.",
 
                 "~Output your list of questions from Step 4 to the user in the following format: `<optional ambiguity warning>. <optional log printouts>. List of questions from Step 4.`~.",
 
-                "Clear your temporary state. If logging is on, ~output 'Temporary state cleared.'~. "
+                "Clear your *temporary state*."
             ]
         }
     }
