@@ -1,8 +1,7 @@
 {
-    "This File's Instructions": {
-        "Overview": "This document compiles a collection of definitions and abstractions that change infrequently. These elements are universally applicable across all bots in the network, and thus are shared scope among all bots on the network.",
-        "Purpose": "Utilize this document as a central reference point. It serves to standardize and clarify terms and concepts used throughout the network of bots.",
-        "Synonyms": "This file can be called `slowly_changing_shared_context.py`, #slowly_changing_shared_context#, #slowly changing#, #sc#, or sc ."
+    "This File": {
+        "*Description*": "This document compiles a collection of definitions and abstractions that change infrequently. These elements are universally applicable across all bots in the network, and thus are shared scope among all bots on the network.Utilize this document as a central reference point. It serves to standardize and clarify terms and concepts used throughout the network of bots.",
+        "*Synonyms*": "This file can be called `slowly_changing_shared_context.py`, #slowly_changing_shared_context#, #slowly changing#, #sc#, or sc ."
     },
 
 
@@ -17,6 +16,7 @@
             },
             ".": "Indicates inheritance. e.g., #sc#.operators refers to the Operators section of slowly_changing_shared_context.py. Note that references to child nodes do not have to be strictly formed. This is acceptable syntax for example: `#sc#.reserved words.theoretical knowledge` (note the spaces in the references to child nodes).",
             "*": "Indicates a Reserved Word.  e.g., *Knowledge* refers to a specific entity defined in `#sc#.Knowledge`.  See #sc#.Reserved Words for a full list of reserved words",
+            "***": "This is the *citation* operator. A string is considered a *citation* when it is wrapped in triple asterisks, for example ***This is a citation (source)***.",
             "^": "Indicates a bot. e.g., ^question^ refers to the Question bot.",
             "%": "Indicates a *persona*, e.g., %Demographer% indicates the use of the `Demographer` *persona*.",
             "<>": "When a string is wrapped in angle brackets, it indicates that the string is a placeholder for some other content. Angle brackets are commonly used to indicate *parameters* for *subroutines*.  For example, in *trigger-prompts*: @Fact List@ using <#knowledge#>.  In this text, the string `#knowledge#` is a placeholder.  It is an example of the type of text that a user may pass to the *sub*.  The angle bracket operators also indicate that the content is optional. For example: `<*top-k*> *opinions*` means that *top-k* may not appear, but *opinions* must appear.",
@@ -27,16 +27,21 @@
         },
 
         "Reserved Words": {
+            "Node": "A *node* is a subsection of a document, and can be accessed using the `#` and `.` operators.  For example, to access this node, a user would say `#sc#.reserved words.node`.",
+            "Description": "Nodes may optionally contain ",
+            "Synonyms": "Also known as *tk*, #sc#.tk, or tk.",
+
             "Bot": "Also called an `assistant`, indidated with the ^ symbol, a bot is a language-model based automaton that receives input and generates output based on *trigger-prompts* and other arguments.  Bots access *knowledge* (some private, and some shared), and produce output, sometimes through the lens of different *personas*.",
             "Network": "The system of bots that share a common state.  This file (#slowly_changing_shared_context#) is the common state.  When a *bot* is aware of this file, it is said to be on the *network*.",
             "Private": "A scoping term which indicates that a particular element is only accessible to its parent *bot*.",
             "Public": "A scoping term which indicates that a particular element is accessible to every *bot* on the *network*.",
             "Trigger-Prompt": "Also known as a *tp*.  A specific word or phrase designed to invoke a particular response or action from a bot.",
             "Subroutine": "Also referred to as *sub*. A subroutine is a specific subset of instructions within a bot's larger instruction set. A sub is invoked by a *Trigger-Prompt*. Subroutines can accept input parameters, and they sometimes produce outputs. Subs are identified by the @ symbol, e.g., @Subroutine@.  Subs can be either *private* or *public*.",
-
+            "Parameter": "Used interchangeably with `argument`. Similar to the concept of a parameter in object oriented function calls, a parameter is an agent of behavior modification that is passed to a *sub* during  *trigger-prompting*.",
+            
             "Persona": "A *Persona*, also called a `voice`, is the lens through which a bot generates its output. For example, a particular *subroutine* could be performed using a %Demographer% persona, which means that every operation in the *sub* is performed in the way a demographer would perform that operation.",
 
-
+            "Citation":"A citation is a verbatim reference to a small subsection of *knowledge*. Citations are copied word for word, token for token, from their source.  The original location of the citation is placed at the end of the citation. Citations take on this format: `***This is a direct quote from a knowledge source (this is the location of the direct quote in its original context).***",
             "De-Jargoned Question": "Also known as a *DJQ* or a *Q*. This refers to a question formulated in straightforward language, easily understandable without specialized knowledge in a particular field.",
             "Fact": "An information piece derived from *Literature* or *Knowledge* that can assist in responding to a *De-Jargoned Question*. A *fact* contains both the *DJQ* and the information required to answer the *DJQ*, in other words a *fact* is a question/answer pair.",
 
@@ -114,7 +119,8 @@
 
 
     "Parameters": {
-        "Question Parameters": {
+        "Societal Forces": {
+            "Description": "",
             "Macroeconomics": "This branch of economics studies the behavior and performance of an economy as a whole. It includes the analysis of economy-wide phenomena such as inflation, price levels, rate of growth, national income, gross domestic product (GDP), and changes in unemployment. Macroeconomic policies and trends influence everything from individual purchasing power to the stability of entire nations.",
             "Demography": "This refers to the statistical study of populations, including the structure, distribution, and trends within a population. Demography looks at factors like birth rates, death rates, aging, migration, and population growth. It's a crucial force as it affects labor markets, economic demand, social services requirements, and political representation.",
             "Manufacturing": "This is the production of goods using labor, machines, tools, and chemical or biological processing. Manufacturing is a critical part of the economy, impacting employment levels, trade balances, and technological innovation. Shifts in manufacturing, like the move from manual labor to automation or from domestic to overseas production, can have profound effects on economies and societies.",
